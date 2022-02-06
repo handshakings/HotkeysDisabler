@@ -1,0 +1,56 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "1cc2b655-04fa-4b6f-8b5d-f3bfdf1b89af": {
+      "ProjectGuid": "1cc2b655-04fa-4b6f-8b5d-f3bfdf1b89af",
+      "DisplayName": "KeyboardHotkeysDisablerService",
+      "ColorIndex": 0
+    },
+    "3d399640-e37e-40f6-b42e-23c31c571940": {
+      "ProjectGuid": "3d399640-e37e-40f6-b42e-23c31c571940",
+      "DisplayName": "KeyboardHotkeysDisablerService",
+      "ColorIndex": 1
+    },
+    "338701ad-3e1d-48c3-94fc-b69c77762d04": {
+      "ProjectGuid": "338701ad-3e1d-48c3-94fc-b69c77762d04",
+      "DisplayName": "KeybaordHotkeysDisablerService",
+      "ColorIndex": 2
+    },
+    "d27036da-f0b2-4050-bc7c-632059b01ebd": {
+      "ProjectGuid": "d27036da-f0b2-4050-bc7c-632059b01ebd",
+      "DisplayName": "KeybaordHotkeysDisabler",
+      "ColorIndex": 3
+    },
+    "6afb37e2-f6a8-462d-a785-54e88dd7a195": {
+      "ProjectGuid": "6afb37e2-f6a8-462d-a785-54e88dd7a195",
+      "DisplayName": "HotkeysDisableService",
+      "ColorIndex": 4
+    },
+    "dcfae004-b14f-4954-b99e-03578843c831": {
+      "ProjectGuid": "dcfae004-b14f-4954-b99e-03578843c831",
+      "DisplayName": "HotkeyDisableService",
+      "ColorIndex": 5
+    },
+    "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3": {
+      "ProjectGuid": "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3",
+      "DisplayName": "Miscellaneous Files",
+      "ColorIndex": -1
+    },
+    "5c64f294-dfe4-441f-ba51-1cfedce26867": {
+      "ProjectGuid": "5c64f294-dfe4-441f-ba51-1cfedce26867",
+      "DisplayName": "HotkeysDisableFormApp",
+      "ColorIndex": 6
+    },
+    "54cd6204-0c0b-4f45-9e66-c2bc186ec5e6": {
+      "ProjectGuid": "54cd6204-0c0b-4f45-9e66-c2bc186ec5e6",
+      "DisplayName": "HotkeyDisableService",
+      "ColorIndex": 7
+    },
+    "b137f70d-325a-446f-8446-c12bc7f67d4e": {
+      "ProjectGuid": "b137f70d-325a-446f-8446-c12bc7f67d4e",
+      "DisplayName": "HotkeysDisableWinFormApp",
+      "ColorIndex": 8
+    }
+  },
+  "NextColorIndex": 9
+}

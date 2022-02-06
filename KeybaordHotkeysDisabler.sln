@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.32014.148
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HotkeysDisableFormApp", "HotkeysDisableFormApp\HotkeysDisableFormApp.csproj", "{5C64F294-DFE4-441F-BA51-1CFEDCE26867}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HotkeysDisableWinFormApp", "HotkeysDisableWinFormApp\HotkeysDisableWinFormApp.csproj", "{B137F70D-325A-446F-8446-C12BC7F67D4E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5C64F294-DFE4-441F-BA51-1CFEDCE26867}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5C64F294-DFE4-441F-BA51-1CFEDCE26867}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5C64F294-DFE4-441F-BA51-1CFEDCE26867}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5C64F294-DFE4-441F-BA51-1CFEDCE26867}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B137F70D-325A-446F-8446-C12BC7F67D4E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B137F70D-325A-446F-8446-C12BC7F67D4E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B137F70D-325A-446F-8446-C12BC7F67D4E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B137F70D-325A-446F-8446-C12BC7F67D4E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {D9DE2164-FB00-4551-854A-CC2519A34603}
+	EndGlobalSection
+EndGlobal

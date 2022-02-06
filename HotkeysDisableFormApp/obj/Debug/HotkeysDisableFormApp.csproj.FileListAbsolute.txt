@@ -1,0 +1,11 @@
+D:\Upwork Projects\KeybaordHotkeysDisabler\HotkeysDisableFormApp\bin\Debug\HotkeysDisableFormApp.exe.config
+D:\Upwork Projects\KeybaordHotkeysDisabler\HotkeysDisableFormApp\bin\Debug\HotkeysDisableFormApp.exe
+D:\Upwork Projects\KeybaordHotkeysDisabler\HotkeysDisableFormApp\bin\Debug\HotkeysDisableFormApp.pdb
+D:\Upwork Projects\KeybaordHotkeysDisabler\HotkeysDisableFormApp\obj\Debug\HotkeysDisableFormApp.csproj.AssemblyReference.cache
+D:\Upwork Projects\KeybaordHotkeysDisabler\HotkeysDisableFormApp\obj\Debug\HotkeysDisableFormApp.csproj.SuggestedBindingRedirects.cache
+D:\Upwork Projects\KeybaordHotkeysDisabler\HotkeysDisableFormApp\obj\Debug\HotkeysDisableFormApp.Home.resources
+D:\Upwork Projects\KeybaordHotkeysDisabler\HotkeysDisableFormApp\obj\Debug\HotkeysDisableFormApp.Properties.Resources.resources
+D:\Upwork Projects\KeybaordHotkeysDisabler\HotkeysDisableFormApp\obj\Debug\HotkeysDisableFormApp.csproj.GenerateResource.cache
+D:\Upwork Projects\KeybaordHotkeysDisabler\HotkeysDisableFormApp\obj\Debug\HotkeysDisableFormApp.csproj.CoreCompileInputs.cache
+D:\Upwork Projects\KeybaordHotkeysDisabler\HotkeysDisableFormApp\obj\Debug\HotkeysDisableFormApp.exe
+D:\Upwork Projects\KeybaordHotkeysDisabler\HotkeysDisableFormApp\obj\Debug\HotkeysDisableFormApp.pdb
