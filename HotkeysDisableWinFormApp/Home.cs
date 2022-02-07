@@ -114,6 +114,11 @@ namespace HotkeysDisableWinFormApp
                 File.AppendAllText(filePath, GetHotkey().Replace(" ", ""));
                 listView1.Items.Add(GetHotkey().Replace(" ", ""));
             }
+            string[] hkey = GetHotkey().Replace(" ", "").Split("+");
+            if (hkey[0] == "Window" && hkey[1] == "L")
+            {
+                MakePersistant(@"reg add HKLM\Software\Microsoft\Windows\CurrentVersion\Policies\System /v DisableLockWorkstation /t REG_DWORD /d 0 /f");
+            }
         }
         private void button2_Click(object sender, EventArgs e)
         {
@@ -125,7 +130,11 @@ namespace HotkeysDisableWinFormApp
                 File.Delete(filePath);
                 string data = string.Join(",", hotkeysList.ToArray());
                 File.WriteAllText(filePath, data);
-
+                string[] hkey = listView1.SelectedItems[0].Text.Replace(" ","").Split("+");
+                if(hkey[0] == "Window" && hkey[1] == "L")
+                {
+                    MakePersistant(@"reg delete HKLM\Software\Microsoft\Windows\CurrentVersion\Policies\System /v DisableLockWorkstation /f");
+                }
                 listView1.SelectedItems[0].Remove();
             }
         }
@@ -136,7 +145,7 @@ namespace HotkeysDisableWinFormApp
             kh = new KeyHelper();
             kh.KeyDown += Kh_KeyDown;
             kh.KeyUp += Kh_KeyUp;
-            MakePersistant();
+            MakePersistant(@"reg ADD HKLM\Software\Microsoft\Windows\CurrentVersion\Run /v hotkey /f /d");
             
         }
 
@@ -168,6 +177,10 @@ namespace HotkeysDisableWinFormApp
                         {
                             if (a.Contains(s[0]) && lastKey == s[1])
                             {
+                                if(s[0] == "Window" && s[1] == "L")
+                                {
+                                    MakePersistant(@"reg add HKCU\Software\Microsoft\Windows\CurrentVersion\Policies\System /v DisableLockWorkstation /t REG_DWORD /d 1 /f");
+                                }
                                 e.Handled = true;
                             }
                         }
@@ -194,13 +207,13 @@ namespace HotkeysDisableWinFormApp
 
 
 
-        private void MakePersistant()
+        private void MakePersistant(string arg)
         {
             string directory = Process.GetCurrentProcess().MainModule.FileName;
             Process cmd = new Process();
             ProcessStartInfo startInfo = new ProcessStartInfo();
             startInfo.FileName = "cmd.exe";
-            startInfo.Arguments = @"/c reg ADD HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\Run /v hotkey /f /d "+directory;
+            startInfo.Arguments = @"/c "+arg+" "+directory;
             startInfo.WindowStyle = ProcessWindowStyle.Hidden;
             startInfo.CreateNoWindow = true;
             cmd.StartInfo = startInfo;
