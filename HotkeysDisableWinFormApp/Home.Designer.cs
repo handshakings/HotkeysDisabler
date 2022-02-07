@@ -49,6 +49,7 @@
             this.columnHeader1 = new System.Windows.Forms.ColumnHeader();
             this.label1 = new System.Windows.Forms.Label();
             this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
+            this.label2 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -56,9 +57,9 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(152, 213);
+            this.button1.Location = new System.Drawing.Point(152, 234);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(202, 26);
+            this.button1.Size = new System.Drawing.Size(202, 23);
             this.button1.TabIndex = 0;
             this.button1.Text = "Disable : Ctrl + Right";
             this.button1.UseVisualStyleBackColor = true;
@@ -99,7 +100,7 @@
             "X",
             "Y",
             "Z"});
-            this.comboBox1.Location = new System.Drawing.Point(69, 213);
+            this.comboBox1.Location = new System.Drawing.Point(69, 234);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(77, 23);
             this.comboBox1.TabIndex = 1;
@@ -125,7 +126,7 @@
             this.groupBox1.Controls.Add(this.radioButton2);
             this.groupBox1.Controls.Add(this.radioButton1);
             this.groupBox1.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.groupBox1.Location = new System.Drawing.Point(12, 12);
+            this.groupBox1.Location = new System.Drawing.Point(12, 33);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(342, 74);
             this.groupBox1.TabIndex = 3;
@@ -173,7 +174,7 @@
             this.groupBox2.Controls.Add(this.radioButton7);
             this.groupBox2.Controls.Add(this.radioButton8);
             this.groupBox2.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.groupBox2.Location = new System.Drawing.Point(12, 93);
+            this.groupBox2.Location = new System.Drawing.Point(12, 114);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(342, 105);
             this.groupBox2.TabIndex = 6;
@@ -241,7 +242,7 @@
             // 
             this.groupBox3.Controls.Add(this.button2);
             this.groupBox3.Controls.Add(this.listView1);
-            this.groupBox3.Location = new System.Drawing.Point(360, 12);
+            this.groupBox3.Location = new System.Drawing.Point(360, 33);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(165, 236);
             this.groupBox3.TabIndex = 7;
@@ -252,7 +253,7 @@
             // 
             this.button2.Location = new System.Drawing.Point(96, 201);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(62, 26);
+            this.button2.Size = new System.Drawing.Size(62, 23);
             this.button2.TabIndex = 1;
             this.button2.Text = "Enable";
             this.button2.UseVisualStyleBackColor = true;
@@ -280,7 +281,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(9, 213);
+            this.label1.Location = new System.Drawing.Point(9, 234);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(54, 19);
             this.label1.TabIndex = 8;
@@ -295,12 +296,25 @@
             this.notifyIcon1.Text = "Hotkeys Disabler";
             this.notifyIcon1.DoubleClick += new System.EventHandler(this.notifyIcon_DoubleClick);
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.label2.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label2.ForeColor = System.Drawing.Color.Red;
+            this.label2.Location = new System.Drawing.Point(12, 9);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(189, 19);
+            this.label2.TabIndex = 9;
+            this.label2.Text = "Win + L not disabled";
+            // 
             // Home
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(531, 254);
+            this.ClientSize = new System.Drawing.Size(531, 276);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
@@ -346,5 +360,6 @@
         private ColumnHeader columnHeader1;
         private Label label1;
         private NotifyIcon notifyIcon1;
+        private Label label2;
     }
 }

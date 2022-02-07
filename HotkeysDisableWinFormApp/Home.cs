@@ -14,13 +14,30 @@ namespace HotkeysDisableWinFormApp
         string key1 = "Ctrl", key2 = null, key3;
         private void Home_Load(object sender, EventArgs e)
         {
+            MakePersistant(@"reg add HKCU\Software\Microsoft\Windows\CurrentVersion\Policies\System /v DisableLockWorkstation /t REG_DWORD /d 1 /f");
             if (File.Exists(filePath))
             {
                 comboBox1.SelectedIndex = 0;
                 string[] hotkeysArray = File.ReadAllText(filePath).Split(",");
+                bool isWinLDisabled = false;
                 foreach (string hotkey in hotkeysArray)
                 {
                     listView1.Items.Add(hotkey);
+                    string[] hkey = hotkey.Replace(" ","").Split("+");
+                    if (hkey[0] == "Window" && hkey[1] == "L")
+                    {
+                        isWinLDisabled = true;  
+                    }
+                }
+                if(isWinLDisabled)
+                {
+                    label2.Text = "Win + L disabled";
+                    MakePersistant(@"reg add HKCU\Software\Microsoft\Windows\CurrentVersion\Policies\System /v DisableLockWorkstation /t REG_DWORD /d 1 /f");
+                }
+                else
+                {
+                    label2.Text = "Win + L not disabled";
+                    MakePersistant(@"reg add HKCU\Software\Microsoft\Windows\CurrentVersion\Policies\System /v DisableLockWorkstation /t REG_DWORD /d 0 /f");
                 }
             }
         }
@@ -117,7 +134,8 @@ namespace HotkeysDisableWinFormApp
             string[] hkey = GetHotkey().Replace(" ", "").Split("+");
             if (hkey[0] == "Window" && hkey[1] == "L")
             {
-                MakePersistant(@"reg add HKLM\Software\Microsoft\Windows\CurrentVersion\Policies\System /v DisableLockWorkstation /t REG_DWORD /d 0 /f");
+                label2.Text = "Win + L disabled";
+                MakePersistant(@"reg add HKCU\Software\Microsoft\Windows\CurrentVersion\Policies\System /v DisableLockWorkstation /t REG_DWORD /d 1 /f");
             }
         }
         private void button2_Click(object sender, EventArgs e)
@@ -130,10 +148,12 @@ namespace HotkeysDisableWinFormApp
                 File.Delete(filePath);
                 string data = string.Join(",", hotkeysList.ToArray());
                 File.WriteAllText(filePath, data);
-                string[] hkey = listView1.SelectedItems[0].Text.Replace(" ","").Split("+");
-                if(hkey[0] == "Window" && hkey[1] == "L")
+
+                string[] hkey = listView1.SelectedItems[0].Text.Replace(" ", "").Split("+");
+                if (hkey[0] == "Window" && hkey[1] == "L")
                 {
-                    MakePersistant(@"reg delete HKLM\Software\Microsoft\Windows\CurrentVersion\Policies\System /v DisableLockWorkstation /f");
+                    label2.Text = "Win + L disabled";
+                    MakePersistant(@"reg add HKCU\Software\Microsoft\Windows\CurrentVersion\Policies\System /v DisableLockWorkstation /t REG_DWORD /d 0 /f");
                 }
                 listView1.SelectedItems[0].Remove();
             }
