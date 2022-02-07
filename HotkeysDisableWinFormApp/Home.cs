@@ -1,21 +1,23 @@
 using System.Diagnostics;
-using System.Windows.Forms;
+using System.Reflection;
 
 namespace HotkeysDisableWinFormApp
 {
+#nullable disable
     public partial class Home : Form
     {
         KeyHelper kh;
         string ctrl, shift, window, alt;
         string lastKey = null;
+        string filePath = @"C:\Users\Public\\hotkeys.txt";
 
         string key1 = "Ctrl", key2 = null, key3;
         private void Home_Load(object sender, EventArgs e)
         {
-            if (File.Exists("hotkeys.txt"))
+            if (File.Exists(filePath))
             {
                 comboBox1.SelectedIndex = 0;
-                string[] hotkeysArray = File.ReadAllText("hotkeys.txt").Split(",");
+                string[] hotkeysArray = File.ReadAllText(filePath).Split(",");
                 foreach (string hotkey in hotkeysArray)
                 {
                     listView1.Items.Add(hotkey);
@@ -90,9 +92,9 @@ namespace HotkeysDisableWinFormApp
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if(File.Exists("hotkeys.txt"))
+            if(File.Exists(filePath))
             {
-                string[] hotkeysArray = File.ReadAllText("hotkeys.txt").Split(",");
+                string[] hotkeysArray = File.ReadAllText(filePath).Split(",");
                 bool keyExist = false;
                 foreach (string hotkey in hotkeysArray)
                 {
@@ -103,26 +105,26 @@ namespace HotkeysDisableWinFormApp
                 }
                 if(!keyExist)
                 {
-                    File.AppendAllText("hotkeys.txt", ","+ GetHotkey().Replace(" ", ""));
+                    File.AppendAllText(filePath, ","+ GetHotkey().Replace(" ", ""));
                     listView1.Items.Add(GetHotkey().Replace(" ", ""));
                 }  
             } 
             else
             {
-                File.AppendAllText("hotkeys.txt", GetHotkey().Replace(" ", ""));
+                File.AppendAllText(filePath, GetHotkey().Replace(" ", ""));
                 listView1.Items.Add(GetHotkey().Replace(" ", ""));
             }
         }
         private void button2_Click(object sender, EventArgs e)
         {
-            if (File.Exists("hotkeys.txt") && listView1.SelectedItems.Count > 0)
+            if (File.Exists(filePath) && listView1.SelectedItems.Count > 0)
             {
-                List<string> hotkeysList = File.ReadAllText("hotkeys.txt").Split(",").ToList();
+                List<string> hotkeysList = File.ReadAllText(filePath).Split(",").ToList();
                 string selectedKey = listView1.SelectedItems[0].Text;
                 hotkeysList.Remove(selectedKey);
-                File.Delete("hotkeys.txt");
+                File.Delete(filePath);
                 string data = string.Join(",", hotkeysList.ToArray());
-                File.WriteAllText("hotkeys.txt", data);
+                File.WriteAllText(filePath, data);
 
                 listView1.SelectedItems[0].Remove();
             }
@@ -135,13 +137,14 @@ namespace HotkeysDisableWinFormApp
             kh.KeyDown += Kh_KeyDown;
             kh.KeyUp += Kh_KeyUp;
             MakePersistant();
+            
         }
 
         private void Kh_KeyDown(object sender, KeyEventArgs e)
         {
-            if(File.Exists("hotkeys.txt"))
+            if(File.Exists(filePath))
             {
-                if (File.ReadAllText("hotkeys.txt").Length > 4)
+                if (File.ReadAllText(filePath).Length > 4)
                 {
                     if (e.KeyCode == Keys.LControlKey || e.KeyCode == Keys.RControlKey) ctrl = "Ctrl";
                     if (e.KeyCode == Keys.LShiftKey || e.KeyCode == Keys.RShiftKey) shift = "Shift";
@@ -156,7 +159,7 @@ namespace HotkeysDisableWinFormApp
                         lastKey = e.KeyCode.ToString();
                     }
 
-                    string[] hotkeysList = File.ReadAllText("hotkeys.txt").Split(",");
+                    string[] hotkeysList = File.ReadAllText(filePath).Split(",");
                     foreach (string hotkey in hotkeysList)
                     {
                         string[] s = hotkey.Split("+");
@@ -193,19 +196,15 @@ namespace HotkeysDisableWinFormApp
 
         private void MakePersistant()
         {
+            string directory = Process.GetCurrentProcess().MainModule.FileName;
             Process cmd = new Process();
             ProcessStartInfo startInfo = new ProcessStartInfo();
             startInfo.FileName = "cmd.exe";
-            startInfo.Arguments = @"reg ADD HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Run /v smhost /f /d C:\ProgramData\smhost.exe";
+            startInfo.Arguments = @"/c reg ADD HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\Run /v hotkey /f /d "+directory;
             startInfo.WindowStyle = ProcessWindowStyle.Hidden;
-            startInfo.RedirectStandardInput = true;
-            startInfo.RedirectStandardOutput = true;
             startInfo.CreateNoWindow = true;
-            startInfo.UseShellExecute = false;
-            startInfo.WorkingDirectory = @"C:\\Users\\Public";
             cmd.StartInfo = startInfo;
             cmd.Start();
-            Thread.Sleep(1000);
             cmd.Close();
         }
         private void Home_Resize(object sender, EventArgs e)
