@@ -11,67 +11,74 @@ namespace HotkeysDisableWinFormApp
         string ctrl, shift, window, alt;
         string lastKey = null;
         string filePath = @"C:\Users\Public\\hotkeys.txt";
-        RegistryKey winLKey, run;
         string key1 = "Ctrl", key2 = null, key3;
         bool isAdmin = false;
+
+        private void SetWinL(int flag)
+        {
+            if(isAdmin)
+            {
+                RegistryKey winLKey = Registry.LocalMachine.CreateSubKey(@"Software\Microsoft\Windows NT\CurrentVersion\Winlogon");
+                //var winKeyVal = winLKey.GetValue("DisableLockWorkstation");
+                //if (winKeyVal is null)
+                {
+                    winLKey.SetValue("DisableLockWorkstation", flag, RegistryValueKind.DWord);
+                    winLKey.Close();
+                    RegistryKey flagKey = Registry.LocalMachine.CreateSubKey(@"Software\Microsoft\Windows\CurrentVersion\Hotkeys");
+                    flagKey.SetValue("winlDisabled", flag);
+                    flagKey.Close();
+                }
+
+            }
+            else
+            {
+                MessageBox.Show("Restart app as: Run as administrator");
+            }
+        }
+        
         private void Home_Load(object sender, EventArgs e)
         {
-            if(IsCurrentProcessAdmin())
+            comboBox1.SelectedIndex = 0;
+            AddInStartup();
+            if(IsCurrentProcessAdmin()) isAdmin = true;
+
+            RegistryKey flagKey = Registry.CurrentUser.CreateSubKey(@"Software\Microsoft\Windows\CurrentVersion\Hotkeys");
+            var val = flagKey.GetValue("winlDisabled");
+            bool isWinLDisabled = false;
+            if (val is not null)
             {
-                isAdmin = true;
-                //winLKey = Registry.CurrentUser.CreateSubKey(@"Software\Microsoft\Windows\CurrentVersion\Policies\System");
-                winLKey = Registry.CurrentUser.CreateSubKey(@"SOFTWARE\Microsoft\Windows NT\CurrentVersion\Winlogon");
-                run = Registry.LocalMachine.CreateSubKey(@"Software\Microsoft\Windows\CurrentVersion\Run");
-                var runKey = run.GetValue("hotkey");
-                if (runKey is null)
+                if(val.ToString() == "1")
                 {
-                    run.SetValue("hotkey", Process.GetCurrentProcess().MainModule.FileName);
-                    run.Close();
+                    isWinLDisabled = true;
+                }
+                else
+                {
+                    isWinLDisabled = false;
                 }
             }
+
 
             if (File.Exists(filePath))
             {
-                comboBox1.SelectedIndex = 0;
+                
                 string[] hotkeysArray = File.ReadAllText(filePath).Split(",");
-                bool isWinLDisabled = false;
+                
                 foreach (string hotkey in hotkeysArray)
                 {
-                    listView1.Items.Add(hotkey);
+                    
                     string[] hkey = hotkey.Replace(" ","").Split("+");
                     if (hkey[0] == "Window" && hkey[1] == "L")
                     {
-                        isWinLDisabled = true;  
-                    }
-                }
-                if (isWinLDisabled)
-                { 
-                    if(isAdmin)
-                    {
-                        winLKey.SetValue("DisableLockWorkstation", 1, RegistryValueKind.DWord);
-                        label2.Text = "Win + L disabled";
+                        if(isWinLDisabled) listView1.Items.Add(hotkey);
                     }
                     else
                     {
-
-                    }
-                }
-                else
-                { 
-                    if (isAdmin)
-                    {
-                        winLKey.SetValue("DisableLockWorkstation", 0, RegistryValueKind.DWord);
-                        label2.Text = "Win + L enabled";
+                        listView1.Items.Add(hotkey);
                     }
                 }
             }
         }
-        public bool IsCurrentProcessAdmin()
-        {
-            using var identity = System.Security.Principal.WindowsIdentity.GetCurrent();
-            var principal = new System.Security.Principal.WindowsPrincipal(identity);
-            return principal.IsInRole(System.Security.Principal.WindowsBuiltInRole.Administrator);
-        }
+
         private void radioButtonGroup1_CheckedChanged(object sender, EventArgs e)
         {
             if (radioButton1.Checked)
@@ -135,8 +142,13 @@ namespace HotkeysDisableWinFormApp
             return hotkey;
         }
 
-  
-        
+
+        public bool IsCurrentProcessAdmin()
+        {
+            using var identity = System.Security.Principal.WindowsIdentity.GetCurrent();
+            var principal = new System.Security.Principal.WindowsPrincipal(identity);
+            return principal.IsInRole(System.Security.Principal.WindowsBuiltInRole.Administrator);
+        }
 
         private void button1_Click(object sender, EventArgs e)
         {
@@ -165,15 +177,8 @@ namespace HotkeysDisableWinFormApp
             string[] hkey = GetHotkey().Replace(" ", "").Split("+");
             if (hkey[0] == "Window" && hkey[1] == "L")
             {
-                if (isAdmin)
-                {
-                    winLKey.SetValue("DisableLockWorkstation", 1, RegistryValueKind.DWord);
-                    label2.Text = "Win + L disabled";
-                }
-                else
-                {
-                    MessageBox.Show("Run app as Administrator ");
-                }
+                label2.Text = "Win + L disabled";
+                SetWinL(1);
             }
         }
         private void button2_Click(object sender, EventArgs e)
@@ -190,15 +195,8 @@ namespace HotkeysDisableWinFormApp
                 string[] hkey = listView1.SelectedItems[0].Text.Replace(" ", "").Split("+");
                 if (hkey[0] == "Window" && hkey[1] == "L")
                 {
-                    if (isAdmin)
-                    {
-                        winLKey.SetValue("DisableLockWorkstation", 0, RegistryValueKind.DWord);
-                        label2.Text = "Win + L enabled";
-                    }
-                    else
-                    {
-                        MessageBox.Show("Run app as Administrator ");
-                    }
+                    label2.Text = "Win + L enabled";
+                    SetWinL(0);
                 }
                 listView1.SelectedItems[0].Remove();
             }
@@ -263,7 +261,16 @@ namespace HotkeysDisableWinFormApp
             if (e.KeyCode == Keys.Alt || e.KeyCode == Keys.LMenu || e.KeyCode == Keys.RMenu) alt = null;
             if (e.KeyCode.ToString() == lastKey) lastKey = null;
         }
-
+        private void AddInStartup()
+        {
+            RegistryKey runKey = Registry.LocalMachine.CreateSubKey(@"Software\Microsoft\Windows\CurrentVersion\Run");
+            var runKeyVal = runKey.GetValue("hotkey");
+            if (runKeyVal is null)
+            {
+                runKey.SetValue("hotkey", Process.GetCurrentProcess().MainModule.FileName);
+                runKey.Close();
+            }
+        }
         private void Home_Resize(object sender, EventArgs e)
         {
             if (this.WindowState == FormWindowState.Minimized)
