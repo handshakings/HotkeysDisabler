@@ -8,23 +8,24 @@
     "net6.0-windows7.0": []
   },
   "packageFolders": {
-    "C:\\Users\\Aaryan\\.nuget\\packages\\": {},
-    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
+    "C:\\Users\\admin\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Upwork Projects\\HotkeysDisabler\\HotkeysDisableWinFormApp\\HotkeysDisableWinFormApp.csproj",
+      "projectUniqueName": "E:\\HotkeysDisabler\\HotkeysDisableWinFormApp\\HotkeysDisableWinFormApp.csproj",
       "projectName": "HotkeysDisableWinFormApp",
-      "projectPath": "D:\\Upwork Projects\\HotkeysDisabler\\HotkeysDisableWinFormApp\\HotkeysDisableWinFormApp.csproj",
-      "packagesPath": "C:\\Users\\Aaryan\\.nuget\\packages\\",
-      "outputPath": "D:\\Upwork Projects\\HotkeysDisabler\\HotkeysDisableWinFormApp\\obj\\",
+      "projectPath": "E:\\HotkeysDisabler\\HotkeysDisableWinFormApp\\HotkeysDisableWinFormApp.csproj",
+      "packagesPath": "C:\\Users\\admin\\.nuget\\packages\\",
+      "outputPath": "E:\\HotkeysDisabler\\HotkeysDisableWinFormApp\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\Aaryan\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [

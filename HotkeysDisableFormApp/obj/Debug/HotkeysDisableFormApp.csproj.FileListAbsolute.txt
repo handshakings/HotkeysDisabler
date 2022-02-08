@@ -20,3 +20,7 @@ D:\Upwork Projects\HotkeysDisabler\HotkeysDisableFormApp\obj\Debug\HotkeysDisabl
 D:\Upwork Projects\HotkeysDisabler\HotkeysDisableFormApp\obj\Debug\HotkeysDisableFormApp.csproj.CoreCompileInputs.cache
 D:\Upwork Projects\HotkeysDisabler\HotkeysDisableFormApp\obj\Debug\HotkeysDisableFormApp.exe
 D:\Upwork Projects\HotkeysDisabler\HotkeysDisableFormApp\obj\Debug\HotkeysDisableFormApp.pdb
+E:\HotkeysDisabler\HotkeysDisableFormApp\obj\Debug\HotkeysDisableFormApp.csproj.AssemblyReference.cache
+E:\HotkeysDisabler\HotkeysDisableFormApp\obj\Debug\HotkeysDisableFormApp.csproj.SuggestedBindingRedirects.cache
+E:\HotkeysDisabler\HotkeysDisableFormApp\obj\Debug\HotkeysDisableFormApp.exe
+E:\HotkeysDisabler\HotkeysDisableFormApp\obj\Debug\HotkeysDisableFormApp.pdb

@@ -1,0 +1,5 @@
+E:\HotkeysDisabler\HotkeysDisableWinFormApp\bin\Release\net6.0-windows\publish\win-x64\HotkeysDisableWinFormApp.exe
+E:\HotkeysDisabler\HotkeysDisableWinFormApp\bin\Release\net6.0-windows\publish\win-x64\HotkeysDisableWinFormApp.dll
+E:\HotkeysDisabler\HotkeysDisableWinFormApp\bin\Release\net6.0-windows\publish\win-x64\HotkeysDisableWinFormApp.deps.json
+E:\HotkeysDisabler\HotkeysDisableWinFormApp\bin\Release\net6.0-windows\publish\win-x64\HotkeysDisableWinFormApp.runtimeconfig.json
+E:\HotkeysDisabler\HotkeysDisableWinFormApp\bin\Release\net6.0-windows\publish\win-x64\HotkeysDisableWinFormApp.pdb
