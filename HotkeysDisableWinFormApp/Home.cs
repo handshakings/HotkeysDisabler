@@ -12,71 +12,42 @@ namespace HotkeysDisableWinFormApp
         string lastKey = null;
         string filePath = @"C:\Users\Public\\hotkeys.txt";
         string key1 = "Ctrl", key2 = null, key3;
-        bool isAdmin = false;
 
         private void SetWinL(int flag)
         {
-            if(isAdmin)
+            if(IsCurrentProcessAdmin())
             {
                 RegistryKey winLKey = Registry.LocalMachine.CreateSubKey(@"Software\Microsoft\Windows NT\CurrentVersion\Winlogon");
-                //var winKeyVal = winLKey.GetValue("DisableLockWorkstation");
-                //if (winKeyVal is null)
-                {
-                    winLKey.SetValue("DisableLockWorkstation", flag, RegistryValueKind.DWord);
-                    winLKey.Close();
-                    RegistryKey flagKey = Registry.LocalMachine.CreateSubKey(@"Software\Microsoft\Windows\CurrentVersion\Hotkeys");
-                    flagKey.SetValue("winlDisabled", flag);
-                    flagKey.Close();
-                }
-
-            }
-            else
-            {
-                MessageBox.Show("Restart app as: Run as administrator");
+                winLKey.SetValue("DisableLockWorkstation", flag, RegistryValueKind.DWord);
+                winLKey.Close();
             }
         }
         
         private void Home_Load(object sender, EventArgs e)
         {
-            comboBox1.SelectedIndex = 0;
-            AddInStartup();
-            if(IsCurrentProcessAdmin()) isAdmin = true;
-
-            RegistryKey flagKey = Registry.CurrentUser.CreateSubKey(@"Software\Microsoft\Windows\CurrentVersion\Hotkeys");
-            var val = flagKey.GetValue("winlDisabled");
-            bool isWinLDisabled = false;
-            if (val is not null)
-            {
-                if(val.ToString() == "1")
-                {
-                    isWinLDisabled = true;
-                }
-                else
-                {
-                    isWinLDisabled = false;
-                }
-            }
-
-
             if (File.Exists(filePath))
             {
-                
                 string[] hotkeysArray = File.ReadAllText(filePath).Split(",");
-                
+
                 foreach (string hotkey in hotkeysArray)
                 {
-                    
-                    string[] hkey = hotkey.Replace(" ","").Split("+");
-                    if (hkey[0] == "Window" && hkey[1] == "L")
-                    {
-                        if(isWinLDisabled) listView1.Items.Add(hotkey);
-                    }
-                    else
-                    {
-                        listView1.Items.Add(hotkey);
-                    }
+                    listView1.Items.Add(hotkey);
                 }
             }
+            else
+            {
+                File.Create(filePath);
+            }
+
+            comboBox1.SelectedIndex = 0;
+            if(File.Exists(filePath))
+            {
+                AddInStartup();
+            }
+            if (!IsCurrentProcessAdmin())
+            {
+                WindowState = FormWindowState.Minimized;
+            } 
         }
 
         private void radioButtonGroup1_CheckedChanged(object sender, EventArgs e)
@@ -177,8 +148,11 @@ namespace HotkeysDisableWinFormApp
             string[] hkey = GetHotkey().Replace(" ", "").Split("+");
             if (hkey[0] == "Window" && hkey[1] == "L")
             {
-                label2.Text = "Win + L disabled";
                 SetWinL(1);
+            }
+            if(hkey[0] == "Alt" && hkey[1] == "Q")
+            {
+                WindowState = FormWindowState.Normal;
             }
         }
         private void button2_Click(object sender, EventArgs e)
@@ -191,11 +165,10 @@ namespace HotkeysDisableWinFormApp
                 File.Delete(filePath);
                 string data = string.Join(",", hotkeysList.ToArray());
                 File.WriteAllText(filePath, data);
-
+                
                 string[] hkey = listView1.SelectedItems[0].Text.Replace(" ", "").Split("+");
                 if (hkey[0] == "Window" && hkey[1] == "L")
                 {
-                    label2.Text = "Win + L enabled";
                     SetWinL(0);
                 }
                 listView1.SelectedItems[0].Remove();
@@ -208,6 +181,11 @@ namespace HotkeysDisableWinFormApp
             kh = new KeyHelper();
             kh.KeyDown += Kh_KeyDown;
             kh.KeyUp += Kh_KeyUp;
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            SetWinL(0);
         }
 
         private void Kh_KeyDown(object sender, KeyEventArgs e)
@@ -263,17 +241,20 @@ namespace HotkeysDisableWinFormApp
         }
         private void AddInStartup()
         {
-            RegistryKey runKey = Registry.LocalMachine.CreateSubKey(@"Software\Microsoft\Windows\CurrentVersion\Run");
-            var runKeyVal = runKey.GetValue("hotkey");
-            if (runKeyVal is null)
+            if(IsCurrentProcessAdmin())
             {
-                runKey.SetValue("hotkey", Process.GetCurrentProcess().MainModule.FileName);
-                runKey.Close();
-            }
+                RegistryKey runKey = Registry.LocalMachine.CreateSubKey(@"Software\Microsoft\Windows\CurrentVersion\Run");
+                var runKeyVal = runKey.GetValue("hotkey");
+                if (runKeyVal is null)
+                {
+                    runKey.SetValue("hotkey", Process.GetCurrentProcess().MainModule.FileName);
+                    runKey.Close();
+                }
+            }    
         }
         private void Home_Resize(object sender, EventArgs e)
         {
-            if (this.WindowState == FormWindowState.Minimized)
+            if (WindowState == FormWindowState.Minimized)
             {
                 Hide();
                 notifyIcon1.Visible = true;
@@ -281,9 +262,12 @@ namespace HotkeysDisableWinFormApp
         }
         private void notifyIcon_DoubleClick(object sender, EventArgs e)
         {
-            Show();
-            this.WindowState = FormWindowState.Normal;
-            notifyIcon1.Visible = false;
+            if(IsCurrentProcessAdmin())
+            {
+                Show();
+                WindowState = FormWindowState.Normal;
+                notifyIcon1.Visible = false;
+            }  
         }
     }
 }
