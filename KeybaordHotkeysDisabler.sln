@@ -5,7 +5,9 @@ VisualStudioVersion = 17.0.32014.148
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HotkeysDisableFormApp", "HotkeysDisableFormApp\HotkeysDisableFormApp.csproj", "{5C64F294-DFE4-441F-BA51-1CFEDCE26867}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HotkeysDisableWinFormApp", "HotkeysDisableWinFormApp\HotkeysDisableWinFormApp.csproj", "{B137F70D-325A-446F-8446-C12BC7F67D4E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HotkeysDisableWinFormApp", "HotkeysDisableWinFormApp\HotkeysDisableWinFormApp.csproj", "{B137F70D-325A-446F-8446-C12BC7F67D4E}"
+EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "HotkeysDisabler", "HotkeysDisabler\HotkeysDisabler.vdproj", "{1582C41E-E24C-43F4-B3EF-9C0FFD9384EE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -14,13 +16,13 @@ Global
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{5C64F294-DFE4-441F-BA51-1CFEDCE26867}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{5C64F294-DFE4-441F-BA51-1CFEDCE26867}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5C64F294-DFE4-441F-BA51-1CFEDCE26867}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{5C64F294-DFE4-441F-BA51-1CFEDCE26867}.Release|Any CPU.Build.0 = Release|Any CPU
-		{B137F70D-325A-446F-8446-C12BC7F67D4E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{B137F70D-325A-446F-8446-C12BC7F67D4E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B137F70D-325A-446F-8446-C12BC7F67D4E}.Debug|Any CPU.ActiveCfg = Release|Any CPU
+		{B137F70D-325A-446F-8446-C12BC7F67D4E}.Debug|Any CPU.Build.0 = Release|Any CPU
 		{B137F70D-325A-446F-8446-C12BC7F67D4E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B137F70D-325A-446F-8446-C12BC7F67D4E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1582C41E-E24C-43F4-B3EF-9C0FFD9384EE}.Debug|Any CPU.ActiveCfg = Debug
+		{1582C41E-E24C-43F4-B3EF-9C0FFD9384EE}.Release|Any CPU.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

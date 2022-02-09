@@ -1,0 +1,11 @@
+E:\HotkeysDisabler\HotkeysDisableFormApp\bin\Release\HotkeysDisableFormApp.exe.config
+E:\HotkeysDisabler\HotkeysDisableFormApp\bin\Release\HotkeysDisableFormApp.exe
+E:\HotkeysDisabler\HotkeysDisableFormApp\bin\Release\HotkeysDisableFormApp.pdb
+E:\HotkeysDisabler\HotkeysDisableFormApp\obj\Release\HotkeysDisableFormApp.csproj.AssemblyReference.cache
+E:\HotkeysDisabler\HotkeysDisableFormApp\obj\Release\HotkeysDisableFormApp.csproj.SuggestedBindingRedirects.cache
+E:\HotkeysDisabler\HotkeysDisableFormApp\obj\Release\HotkeysDisableFormApp.Home.resources
+E:\HotkeysDisabler\HotkeysDisableFormApp\obj\Release\HotkeysDisableFormApp.Properties.Resources.resources
+E:\HotkeysDisabler\HotkeysDisableFormApp\obj\Release\HotkeysDisableFormApp.csproj.GenerateResource.cache
+E:\HotkeysDisabler\HotkeysDisableFormApp\obj\Release\HotkeysDisableFormApp.csproj.CoreCompileInputs.cache
+E:\HotkeysDisabler\HotkeysDisableFormApp\obj\Release\HotkeysDisableFormApp.exe
+E:\HotkeysDisabler\HotkeysDisableFormApp\obj\Release\HotkeysDisableFormApp.pdb

@@ -1,6 +1,6 @@
 using Microsoft.Win32;
 using System.Diagnostics;
-using System.Reflection;
+using System.Runtime.InteropServices;
 
 namespace HotkeysDisableWinFormApp
 {
@@ -25,6 +25,7 @@ namespace HotkeysDisableWinFormApp
         
         private void Home_Load(object sender, EventArgs e)
         {
+            comboBox1.SelectedIndex = 0;
             if (File.Exists(filePath))
             {
                 string[] hotkeysArray = File.ReadAllText(filePath).Split(",");
@@ -39,15 +40,11 @@ namespace HotkeysDisableWinFormApp
                 File.Create(filePath);
             }
 
-            comboBox1.SelectedIndex = 0;
-            if(File.Exists(filePath))
+            if(File.Exists(filePath) && IsCurrentProcessAdmin())
             {
-                AddInStartup();
+                AddInStartup(); 
             }
-            if (!IsCurrentProcessAdmin())
-            {
-                WindowState = FormWindowState.Minimized;
-            } 
+            if (!IsCurrentProcessAdmin()) hideIt();
         }
 
         private void radioButtonGroup1_CheckedChanged(object sender, EventArgs e)
@@ -150,10 +147,6 @@ namespace HotkeysDisableWinFormApp
             {
                 SetWinL(1);
             }
-            if(hkey[0] == "Alt" && hkey[1] == "Q")
-            {
-                WindowState = FormWindowState.Normal;
-            }
         }
         private void button2_Click(object sender, EventArgs e)
         {
@@ -241,20 +234,17 @@ namespace HotkeysDisableWinFormApp
         }
         private void AddInStartup()
         {
-            if(IsCurrentProcessAdmin())
+            RegistryKey runKey = Registry.LocalMachine.CreateSubKey(@"Software\Microsoft\Windows\CurrentVersion\Run");
+            var runKeyVal = runKey.GetValue("hotkey");
+            if (runKeyVal is null)
             {
-                RegistryKey runKey = Registry.LocalMachine.CreateSubKey(@"Software\Microsoft\Windows\CurrentVersion\Run");
-                var runKeyVal = runKey.GetValue("hotkey");
-                if (runKeyVal is null)
-                {
-                    runKey.SetValue("hotkey", Process.GetCurrentProcess().MainModule.FileName);
-                    runKey.Close();
-                }
-            }    
+                runKey.SetValue("hotkey", Process.GetCurrentProcess().MainModule.FileName);
+                runKey.Close();
+            }   
         }
         private void Home_Resize(object sender, EventArgs e)
         {
-            if (WindowState == FormWindowState.Minimized)
+            if (WindowState == FormWindowState.Minimized && IsCurrentProcessAdmin())
             {
                 Hide();
                 notifyIcon1.Visible = true;
@@ -269,5 +259,26 @@ namespace HotkeysDisableWinFormApp
                 notifyIcon1.Visible = false;
             }  
         }
+
+
+        private void hideIt()
+        {
+            Width = 0;
+            Height = 0;
+            FormBorderStyle = FormBorderStyle.SizableToolWindow;
+            WindowState = FormWindowState.Minimized;
+            ShowInTaskbar = false;
+            ShowIcon = false;
+            Opacity = 0;
+            MaximizeBox = false;
+            MinimizeBox = false;
+            Text = null;
+            Visible = false;
+            ControlBox = false;
+            Hide();
+        }
+
+
+
     }
 }

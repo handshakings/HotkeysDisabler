@@ -85,6 +85,7 @@ namespace HotkeysDisableWinFormApp
         {
             UnhookWindowsHookEx(ptrHook);
         }
+
     }
 
 }
