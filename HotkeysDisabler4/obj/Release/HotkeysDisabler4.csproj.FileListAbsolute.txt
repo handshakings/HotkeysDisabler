@@ -1,0 +1,11 @@
+D:\Upwork Projects\Windows Apps\HotkeysDisabler\HotkeysDisabler4\bin\Release\HotkeysDisabler4.exe.config
+D:\Upwork Projects\Windows Apps\HotkeysDisabler\HotkeysDisabler4\bin\Release\HotkeysDisabler4.exe
+D:\Upwork Projects\Windows Apps\HotkeysDisabler\HotkeysDisabler4\bin\Release\HotkeysDisabler4.pdb
+D:\Upwork Projects\Windows Apps\HotkeysDisabler\HotkeysDisabler4\obj\Release\HotkeysDisabler4.csproj.AssemblyReference.cache
+D:\Upwork Projects\Windows Apps\HotkeysDisabler\HotkeysDisabler4\obj\Release\HotkeysDisabler4.csproj.SuggestedBindingRedirects.cache
+D:\Upwork Projects\Windows Apps\HotkeysDisabler\HotkeysDisabler4\obj\Release\HotkeysDisabler4.Home.resources
+D:\Upwork Projects\Windows Apps\HotkeysDisabler\HotkeysDisabler4\obj\Release\HotkeysDisabler4.Properties.Resources.resources
+D:\Upwork Projects\Windows Apps\HotkeysDisabler\HotkeysDisabler4\obj\Release\HotkeysDisabler4.csproj.GenerateResource.cache
+D:\Upwork Projects\Windows Apps\HotkeysDisabler\HotkeysDisabler4\obj\Release\HotkeysDisabler4.csproj.CoreCompileInputs.cache
+D:\Upwork Projects\Windows Apps\HotkeysDisabler\HotkeysDisabler4\obj\Release\HotkeysDisabler4.exe
+D:\Upwork Projects\Windows Apps\HotkeysDisabler\HotkeysDisabler4\obj\Release\HotkeysDisabler4.pdb

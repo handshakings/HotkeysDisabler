@@ -7,7 +7,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HotkeysDisableFormApp", "Ho
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HotkeysDisableWinFormApp", "HotkeysDisableWinFormApp\HotkeysDisableWinFormApp.csproj", "{B137F70D-325A-446F-8446-C12BC7F67D4E}"
 EndProject
-Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "HotkeysDisabler", "HotkeysDisabler\HotkeysDisabler.vdproj", "{1582C41E-E24C-43F4-B3EF-9C0FFD9384EE}"
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "HotkeysDisabler", "HotkeysDisabler\HotkeysDisabler.vdproj", "{D7D28F1F-D816-4FF3-BB62-B13D151D1B7E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HotkeysDisabler4", "HotkeysDisabler4\HotkeysDisabler4.csproj", "{8C4E88AE-7466-40E9-9900-77EDB349EDE4}"
+EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "HotkeysDisabler4Setup", "HotkeysDisabler4Setup\HotkeysDisabler4Setup.vdproj", "{9EE5A472-88FA-4AE4-8D5A-9857419624A1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,12 +21,17 @@ Global
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{5C64F294-DFE4-441F-BA51-1CFEDCE26867}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{5C64F294-DFE4-441F-BA51-1CFEDCE26867}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{B137F70D-325A-446F-8446-C12BC7F67D4E}.Debug|Any CPU.ActiveCfg = Release|Any CPU
-		{B137F70D-325A-446F-8446-C12BC7F67D4E}.Debug|Any CPU.Build.0 = Release|Any CPU
+		{B137F70D-325A-446F-8446-C12BC7F67D4E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{B137F70D-325A-446F-8446-C12BC7F67D4E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B137F70D-325A-446F-8446-C12BC7F67D4E}.Release|Any CPU.Build.0 = Release|Any CPU
-		{1582C41E-E24C-43F4-B3EF-9C0FFD9384EE}.Debug|Any CPU.ActiveCfg = Debug
-		{1582C41E-E24C-43F4-B3EF-9C0FFD9384EE}.Release|Any CPU.ActiveCfg = Release
+		{D7D28F1F-D816-4FF3-BB62-B13D151D1B7E}.Debug|Any CPU.ActiveCfg = Debug
+		{D7D28F1F-D816-4FF3-BB62-B13D151D1B7E}.Release|Any CPU.ActiveCfg = Release
+		{8C4E88AE-7466-40E9-9900-77EDB349EDE4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8C4E88AE-7466-40E9-9900-77EDB349EDE4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8C4E88AE-7466-40E9-9900-77EDB349EDE4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8C4E88AE-7466-40E9-9900-77EDB349EDE4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9EE5A472-88FA-4AE4-8D5A-9857419624A1}.Debug|Any CPU.ActiveCfg = Debug
+		{9EE5A472-88FA-4AE4-8D5A-9857419624A1}.Release|Any CPU.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -50,7 +50,17 @@
       "ProjectGuid": "b137f70d-325a-446f-8446-c12bc7f67d4e",
       "DisplayName": "HotkeysDisableWinFormApp",
       "ColorIndex": 8
+    },
+    "6412ae26-fe00-4864-9f9f-4b8f0424a521": {
+      "ProjectGuid": "6412ae26-fe00-4864-9f9f-4b8f0424a521",
+      "DisplayName": "WinLDisabler",
+      "ColorIndex": 9
+    },
+    "8c4e88ae-7466-40e9-9900-77edb349ede4": {
+      "ProjectGuid": "8c4e88ae-7466-40e9-9900-77edb349ede4",
+      "DisplayName": "HotkeysDisabler4",
+      "ColorIndex": 10
     }
   },
-  "NextColorIndex": 9
+  "NextColorIndex": 11
 }

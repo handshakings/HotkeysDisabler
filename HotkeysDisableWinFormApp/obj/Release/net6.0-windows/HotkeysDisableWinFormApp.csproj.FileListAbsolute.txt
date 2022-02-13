@@ -1,16 +1,17 @@
-E:\HotkeysDisabler\HotkeysDisableWinFormApp\bin\Release\net6.0-windows\HotkeysDisableWinFormApp.exe
-E:\HotkeysDisabler\HotkeysDisableWinFormApp\bin\Release\net6.0-windows\HotkeysDisableWinFormApp.deps.json
-E:\HotkeysDisabler\HotkeysDisableWinFormApp\bin\Release\net6.0-windows\HotkeysDisableWinFormApp.runtimeconfig.json
-E:\HotkeysDisabler\HotkeysDisableWinFormApp\bin\Release\net6.0-windows\HotkeysDisableWinFormApp.dll
-E:\HotkeysDisabler\HotkeysDisableWinFormApp\bin\Release\net6.0-windows\ref\HotkeysDisableWinFormApp.dll
-E:\HotkeysDisabler\HotkeysDisableWinFormApp\bin\Release\net6.0-windows\HotkeysDisableWinFormApp.pdb
-E:\HotkeysDisabler\HotkeysDisableWinFormApp\obj\Release\net6.0-windows\HotkeysDisableWinFormApp.Home.resources
-E:\HotkeysDisabler\HotkeysDisableWinFormApp\obj\Release\net6.0-windows\HotkeysDisableWinFormApp.csproj.GenerateResource.cache
-E:\HotkeysDisabler\HotkeysDisableWinFormApp\obj\Release\net6.0-windows\HotkeysDisableWinFormApp.GeneratedMSBuildEditorConfig.editorconfig
-E:\HotkeysDisabler\HotkeysDisableWinFormApp\obj\Release\net6.0-windows\HotkeysDisableWinFormApp.AssemblyInfoInputs.cache
-E:\HotkeysDisabler\HotkeysDisableWinFormApp\obj\Release\net6.0-windows\HotkeysDisableWinFormApp.AssemblyInfo.cs
-E:\HotkeysDisabler\HotkeysDisableWinFormApp\obj\Release\net6.0-windows\HotkeysDisableWinFormApp.csproj.CoreCompileInputs.cache
-E:\HotkeysDisabler\HotkeysDisableWinFormApp\obj\Release\net6.0-windows\HotkeysDisableWinFormApp.dll
-E:\HotkeysDisabler\HotkeysDisableWinFormApp\obj\Release\net6.0-windows\ref\HotkeysDisableWinFormApp.dll
-E:\HotkeysDisabler\HotkeysDisableWinFormApp\obj\Release\net6.0-windows\HotkeysDisableWinFormApp.pdb
-E:\HotkeysDisabler\HotkeysDisableWinFormApp\obj\Release\net6.0-windows\HotkeysDisableWinFormApp.genruntimeconfig.cache
+D:\Upwork Projects\Windows Apps\HotkeysDisabler\HotkeysDisableWinFormApp\bin\Release\net6.0-windows\HotkeysDisableWinFormApp.exe
+D:\Upwork Projects\Windows Apps\HotkeysDisabler\HotkeysDisableWinFormApp\bin\Release\net6.0-windows\HotkeysDisableWinFormApp.deps.json
+D:\Upwork Projects\Windows Apps\HotkeysDisabler\HotkeysDisableWinFormApp\bin\Release\net6.0-windows\HotkeysDisableWinFormApp.runtimeconfig.json
+D:\Upwork Projects\Windows Apps\HotkeysDisabler\HotkeysDisableWinFormApp\bin\Release\net6.0-windows\HotkeysDisableWinFormApp.dll
+D:\Upwork Projects\Windows Apps\HotkeysDisabler\HotkeysDisableWinFormApp\bin\Release\net6.0-windows\ref\HotkeysDisableWinFormApp.dll
+D:\Upwork Projects\Windows Apps\HotkeysDisabler\HotkeysDisableWinFormApp\bin\Release\net6.0-windows\HotkeysDisableWinFormApp.pdb
+D:\Upwork Projects\Windows Apps\HotkeysDisabler\HotkeysDisableWinFormApp\obj\Release\net6.0-windows\HotkeysDisableWinFormApp.Home.resources
+D:\Upwork Projects\Windows Apps\HotkeysDisabler\HotkeysDisableWinFormApp\obj\Release\net6.0-windows\HotkeysDisableWinFormApp.csproj.GenerateResource.cache
+D:\Upwork Projects\Windows Apps\HotkeysDisabler\HotkeysDisableWinFormApp\obj\Release\net6.0-windows\HotkeysDisableWinFormApp.GeneratedMSBuildEditorConfig.editorconfig
+D:\Upwork Projects\Windows Apps\HotkeysDisabler\HotkeysDisableWinFormApp\obj\Release\net6.0-windows\HotkeysDisableWinFormApp.AssemblyInfoInputs.cache
+D:\Upwork Projects\Windows Apps\HotkeysDisabler\HotkeysDisableWinFormApp\obj\Release\net6.0-windows\HotkeysDisableWinFormApp.AssemblyInfo.cs
+D:\Upwork Projects\Windows Apps\HotkeysDisabler\HotkeysDisableWinFormApp\obj\Release\net6.0-windows\HotkeysDisableWinFormApp.csproj.CoreCompileInputs.cache
+D:\Upwork Projects\Windows Apps\HotkeysDisabler\HotkeysDisableWinFormApp\obj\Release\net6.0-windows\HotkeysDisableWinFormApp.dll
+D:\Upwork Projects\Windows Apps\HotkeysDisabler\HotkeysDisableWinFormApp\obj\Release\net6.0-windows\ref\HotkeysDisableWinFormApp.dll
+D:\Upwork Projects\Windows Apps\HotkeysDisabler\HotkeysDisableWinFormApp\obj\Release\net6.0-windows\HotkeysDisableWinFormApp.pdb
+D:\Upwork Projects\Windows Apps\HotkeysDisabler\HotkeysDisableWinFormApp\obj\Release\net6.0-windows\HotkeysDisableWinFormApp.genruntimeconfig.cache
+D:\Upwork Projects\Windows Apps\HotkeysDisabler\HotkeysDisableWinFormApp\obj\Release\net6.0-windows\HotkeysDisableWinFormApp.csproj.AssemblyReference.cache
