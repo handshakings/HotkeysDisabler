@@ -200,7 +200,7 @@ namespace HotkeysDisabler4
         private void Kh_KeyDown(object sender, KeyEventArgs e)
         {
              if (File.Exists(filePath))
-            {
+             {
                 if (File.ReadAllText(filePath).Length > 4)
                 {
                     if (e.KeyCode == Keys.LControlKey || e.KeyCode == Keys.RControlKey) ctrl = "Ctrl";
@@ -213,13 +213,13 @@ namespace HotkeysDisabler4
                         e.KeyCode != Keys.LWin && e.KeyCode != Keys.RWin &&
                         e.KeyCode != Keys.Alt && e.KeyCode != Keys.LMenu && e.KeyCode != Keys.RMenu)
                     {
-                        lastKey = e.KeyCode.ToString();
+                         lastKey = e.KeyCode.ToString();
                     }
 
                     string[] hotkeysList = File.ReadAllText(filePath).Split(',');
                     foreach (string hotkey in hotkeysList)
                     {
-                        string[] s = hotkey.Split(',');
+                        string[] s = hotkey.Split('+');
                         string a = (ctrl + " " + shift + " " + alt + " " + window).Replace(" ", "");
                         if (s.Count() == 2)
                         {
@@ -237,7 +237,7 @@ namespace HotkeysDisabler4
                         }
                     }
                 }
-            }
+             }
         }
 
         
