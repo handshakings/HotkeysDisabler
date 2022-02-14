@@ -16,10 +16,20 @@ namespace HotkeysDisabler4
         string filePath = @"C:\Users\Public\\hotkeys.txt";
         string key1 = "Ctrl", key2 = null, key3;
 
-        
-
         private void Home_Load(object sender, EventArgs e)
-        {        
+        {                
+            if (GetWinL() == 1)
+            {
+                checkBox1.Text = "Enable Win+L";
+                checkBox1.Checked = true;
+                checkBox1.ForeColor = System.Drawing.Color.Red;
+            }
+            else if(GetWinL() == 0)
+            {
+                checkBox1.Text = "Disable Win+L";
+                checkBox1.Checked = false;
+                checkBox1.ForeColor = System.Drawing.Color.Green;
+            }
             comboBox1.SelectedIndex = 0;
             if (File.Exists(filePath))
             {
@@ -126,10 +136,22 @@ namespace HotkeysDisabler4
         {
             if (IsCurrentProcessAdmin())
             {
-                RegistryKey winLKey = Registry.CurrentUser.CreateSubKey(@"Software\Microsoft\Windows NT\CurrentVersion\Winlogon");
+                RegistryKey winLKey = Registry.LocalMachine.CreateSubKey(@"Software\Microsoft\Windows NT\CurrentVersion\Winlogon");
                 winLKey.SetValue("DisableLockWorkstation", flag, RegistryValueKind.DWord);
                 winLKey.Close();
             }
+        }
+        private int GetWinL()
+        {
+            int value = 0;
+            if (IsCurrentProcessAdmin())
+            {
+                RegistryKey winLKey = Registry.LocalMachine.CreateSubKey(@"Software\Microsoft\Windows NT\CurrentVersion\Winlogon");
+                var val = winLKey.GetValue("DisableLockWorkstation");
+                if (val != null) value = (int)val;
+                winLKey.Close();
+            }
+            return value;
         }
 
         public bool IsCurrentProcessAdmin()
@@ -252,9 +274,9 @@ namespace HotkeysDisabler4
         }
         private void AddInStartup()
         {
-            RegistryKey runKey = Registry.CurrentUser.CreateSubKey(@"Software\Microsoft\Windows\CurrentVersion\Run");
+            RegistryKey runKey = Registry.LocalMachine.CreateSubKey(@"Software\Microsoft\Windows\CurrentVersion\Run");
             var runKeyVal = runKey.GetValue("hotkey");
-            if (runKeyVal is null)
+            if (runKeyVal == null)
             {
                 runKey.SetValue("hotkey", Process.GetCurrentProcess().MainModule.FileName);
                 runKey.Close();
