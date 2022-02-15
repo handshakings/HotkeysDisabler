@@ -60,7 +60,12 @@
       "ProjectGuid": "8c4e88ae-7466-40e9-9900-77edb349ede4",
       "DisplayName": "HotkeysDisabler4",
       "ColorIndex": 10
+    },
+    "fbc52664-61f2-48ef-b073-156530ec1371": {
+      "ProjectGuid": "fbc52664-61f2-48ef-b073-156530ec1371",
+      "DisplayName": "AutoHotkeysDisabler",
+      "ColorIndex": 11
     }
   },
-  "NextColorIndex": 11
+  "NextColorIndex": 12
 }

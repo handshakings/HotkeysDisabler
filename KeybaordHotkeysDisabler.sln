@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HotkeysDisabler4", "Hotkeys
 EndProject
 Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "HotkeysDisabler4Setup", "HotkeysDisabler4Setup\HotkeysDisabler4Setup.vdproj", "{9EE5A472-88FA-4AE4-8D5A-9857419624A1}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutoHotkeysDisabler", "AutoHotkeysDisabler\AutoHotkeysDisabler.csproj", "{FBC52664-61F2-48EF-B073-156530EC1371}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -31,6 +33,10 @@ Global
 		{8C4E88AE-7466-40E9-9900-77EDB349EDE4}.Release|Any CPU.Build.0 = Release|Any CPU
 		{9EE5A472-88FA-4AE4-8D5A-9857419624A1}.Debug|Any CPU.ActiveCfg = Debug
 		{9EE5A472-88FA-4AE4-8D5A-9857419624A1}.Release|Any CPU.ActiveCfg = Release
+		{FBC52664-61F2-48EF-B073-156530EC1371}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FBC52664-61F2-48EF-B073-156530EC1371}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FBC52664-61F2-48EF-B073-156530EC1371}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FBC52664-61F2-48EF-B073-156530EC1371}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

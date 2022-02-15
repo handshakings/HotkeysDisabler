@@ -1,0 +1,11 @@
+E:\HotkeysDisabler\AutoHotkeysDisabler\obj\Debug\AutoHotkeysDisabler.csproj.AssemblyReference.cache
+E:\HotkeysDisabler\AutoHotkeysDisabler\obj\Debug\AutoHotkeysDisabler.csproj.SuggestedBindingRedirects.cache
+E:\HotkeysDisabler\AutoHotkeysDisabler\obj\Debug\AutoHotKeysDisabler.Home.resources
+E:\HotkeysDisabler\AutoHotkeysDisabler\obj\Debug\HotkeysDisabler4.Properties.Resources.resources
+E:\HotkeysDisabler\AutoHotkeysDisabler\obj\Debug\AutoHotkeysDisabler.csproj.GenerateResource.cache
+E:\HotkeysDisabler\AutoHotkeysDisabler\obj\Debug\AutoHotkeysDisabler.csproj.CoreCompileInputs.cache
+E:\HotkeysDisabler\AutoHotkeysDisabler\obj\Debug\HotkeysDisabler4.exe
+E:\HotkeysDisabler\AutoHotkeysDisabler\obj\Debug\HotkeysDisabler4.pdb
+E:\HotkeysDisabler\AutoHotkeysDisabler\bin\Debug\HotkeysDisabler4.exe.config
+E:\HotkeysDisabler\AutoHotkeysDisabler\bin\Debug\HotkeysDisabler4.exe
+E:\HotkeysDisabler\AutoHotkeysDisabler\bin\Debug\HotkeysDisabler4.pdb
