@@ -58,7 +58,6 @@ namespace AutoHotKeysDisabler
             if (nCode >= 0)
             {
                 KBDLLHOOKSTRUCT keyInfo = (KBDLLHOOKSTRUCT)Marshal.PtrToStructure(lp, typeof(KBDLLHOOKSTRUCT));
-
                 KeyEventArgs eventArgs = new KeyEventArgs(keyInfo.key);
 
                 if ((wp == WM_KEYDOWN || wp == WM_SYSKEYDOWN) && KeyDown != null && keyInfo.vkCode != 0)

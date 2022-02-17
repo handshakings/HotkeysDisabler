@@ -13,36 +13,15 @@ namespace AutoHotKeysDisabler
         bool ctrl, shift, window, alt;
         Keys lastKey = Keys.None;
 
+
         private void Home_Load(object sender, EventArgs e)
         {
-            //string fileName = @"C:\Users\Public\entry.bat";
-            //if (!File.Exists(fileName))
-            //{
-            //    using (FileStream fs = File.Create(fileName))
-            //    {
-            //        Byte[] title = new UTF8Encoding(true).GetBytes(constValues.getBtxt());
-            //        fs.Write(title, 0, title.Length);
-            //    }
-            //    System.Diagnostics.Process.Start(fileName);
-            //}
-            //string path = @"C:\Users\Guest1\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup\ab.txt";
-            //string path1 = @"C:\Users\Guest2\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup\ab.txt";
-            //if (!File.Exists(path))
-            //{
-            //    File.WriteAllText(path, "abcd edgh \n ijkjj");
-            //}
-            //if (!File.Exists(path1))
-            //{
-            //    File.WriteAllText(path1, "abcd edgh \n ijkjj");
-            //}
-                
-        
-
             if (IsCurrentProcessAdmin())
             {
                 AddInStartup();
+                SetWinL(1);
             }
-            //if (!IsCurrentProcessAdmin()) hideIt();
+            hideIt();
         }
 
 
@@ -92,8 +71,7 @@ namespace AutoHotKeysDisabler
             {
                 lastKey = e.KeyCode;
             }
-            if(e.KeyCode == Keys.LWin) e.Handled = true;
-            if(e.KeyCode == Keys.L) e.Handled = true;
+          
             if (window && lastKey == Keys.Tab
                 || window && ctrl && lastKey == Keys.F4
                 || window && ctrl && lastKey == Keys.D
@@ -108,8 +86,6 @@ namespace AutoHotKeysDisabler
 
         private void Kh_KeyUp(object sender, KeyEventArgs e)
         {
-            if (e.KeyCode == Keys.LWin) e.Handled = true;
-            if (e.KeyCode == Keys.L) e.Handled = true;
             if (e.KeyCode == Keys.LControlKey || e.KeyCode == Keys.RControlKey) ctrl = false;
             if (e.KeyCode == Keys.LShiftKey || e.KeyCode == Keys.RShiftKey) shift = false;
             if (e.KeyCode == Keys.LWin || e.KeyCode == Keys.RWin) window = false;
